@@ -1,0 +1,55 @@
+<tw-storydata name="That&#x27;s Not Mine!" startnode="1" creator="Twine" creator-version="2.0.8" ifid="EFFE1753-D4DA-46AF-B31F-E85AAAEC7F5B" format="Harlowe" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="225,62">You wake up, discover a rash, and the phone rings.
+
+What next?
+
+(set:$morning to 0)
+
+[[Investigate Rash]]
+[[Answer the phone]]
+[[Make breakfast]]</tw-passagedata><tw-passagedata pid="2" name="Investigate Rash" tags="" position="128,268">This rash looks like you should call the hospital.
+
+You remember the number.
+
+What next?
+(set:$hospitalnumber to 1)
+
+(if:$morning is 1)[ [[Well then...-&gt;Second Round]] ]
+
+(if:$morning is 0)[
+(set:$morning to 1)
+
+[[Answer the phone]]
+[[Make breakfast]]
+]</tw-passagedata><tw-passagedata pid="3" name="Answer the phone" tags="" position="275,199">Your friend is calling to remind you that you have money.  You get money.
+
+(set:$friendcall to 1)
+
+(if:$morning is 1)[ [[Well then...-&gt;Second Round]] ]
+
+(if:$morning is 0)[
+(set:$morning to 1)
+
+[[Investigate Rash]]
+[[Make breakfast]]
+]
+
+</tw-passagedata><tw-passagedata pid="4" name="Make breakfast" tags="" position="525,212">Yum yum breakfast you have energy
+
+Oh no the rash got worse though!
+
+(set:$energy to 1)
+
+(if:$morning is 1)[ [[Well then...-&gt;Second Round]] ]
+
+(if:$morning is 0)[
+(set:$morning to 1)
+What next?
+
+[[Investigate Rash]]
+[[Answer the phone]]
+]
+
+</tw-passagedata><tw-passagedata pid="5" name="Second Round" tags="" position="344,459">So here we are...
+(if:$hospitalnumber is 1)[You know the number to the hospital...]
+(if:$friendcall is 1)[You have the money from your friend...]
+(if:$energy is 1)[You have plenty of energy from a healthy breakfast...]</tw-passagedata></tw-storydata>
