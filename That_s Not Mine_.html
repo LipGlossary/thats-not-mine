@@ -1,4 +1,4 @@
-<tw-storydata name="That&#x27;s Not Mine!" startnode="1" creator="Twine" creator-version="2.0.8" ifid="EFFE1753-D4DA-46AF-B31F-E85AAAEC7F5B" format="Harlowe" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="225,62">You wake up, discover a rash, and the phone rings.
+<tw-storydata name="That&#x27;s Not Mine!" startnode="1" creator="Twine" creator-version="2.0.8" ifid="EFFE1753-D4DA-46AF-B31F-E85AAAEC7F5B" format="Harlowe" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="71,74">You wake up, discover a rash, and the phone rings.
 
 What next?
 
@@ -6,7 +6,7 @@ What next?
 
 [[Investigate Rash]]
 [[Answer the phone]]
-[[Make breakfast]]</tw-passagedata><tw-passagedata pid="2" name="Investigate Rash" tags="" position="128,268">This rash looks like you should call the hospital.
+[[Make breakfast]]</tw-passagedata><tw-passagedata pid="2" name="Investigate Rash" tags="" position="421,162">This rash looks like you should call the hospital.
 
 You remember the number.
 
@@ -20,7 +20,7 @@ What next?
 
 [[Answer the phone]]
 [[Make breakfast]]
-]</tw-passagedata><tw-passagedata pid="3" name="Answer the phone" tags="" position="275,199">Your friend is calling to remind you that you have money.  You get money.
+]</tw-passagedata><tw-passagedata pid="3" name="Answer the phone" tags="" position="325,29">Your friend is calling to remind you that you have money.  You get money.
 
 (set:$friendcall to 1)
 
@@ -33,7 +33,7 @@ What next?
 [[Make breakfast]]
 ]
 
-</tw-passagedata><tw-passagedata pid="4" name="Make breakfast" tags="" position="525,212">Yum yum breakfast you have energy
+</tw-passagedata><tw-passagedata pid="4" name="Make breakfast" tags="" position="331,287">Yum yum breakfast you have energy
 
 Oh no the rash got worse though!
 
@@ -49,7 +49,42 @@ What next?
 [[Answer the phone]]
 ]
 
-</tw-passagedata><tw-passagedata pid="5" name="Second Round" tags="" position="344,459">So here we are...
-(if:$hospitalnumber is 1)[You know the number to the hospital...]
-(if:$friendcall is 1)[You have the money from your friend...]
-(if:$energy is 1)[You have plenty of energy from a healthy breakfast...]</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="5" name="Second Round" tags="" position="609,149">So here we are...(if:$hospitalnumber is 1)[You know the number to the hospital...](if:$friendcall is 1)[You have the money from your friend...](if:$energy is 1)[You have plenty of energy from a healthy breakfast...]
+
+(if:$hospitalnumber is 0)[You give the rash a cursory glance, but you can&#x27;t give it too much thought as you&#x27;re already late for getting some drugs.]
+(if:$friendcall is 0)[You hear your friend&#x27;s voice on the answering machine... not sure what it was he wanted.  No time to call him back though, you need to get you some drugs.]
+(if:$energy is 0)[No time for a proper breakfast, so you grab a snack and head out on your way to get some drugs.]
+
+[[Get some drugs]]</tw-passagedata><tw-passagedata pid="6" name="Get some drugs" tags="" position="609,299">You head down to the place where people go to get drugs wherever that is.
+
+You see a newspaper vendor (if:$newsIsDone is 1)[busy with another customer], a six-year-old-kid, and some totally shady as fuck hustler.
+
+(if:$newsIsDone is 0)[ [[Talk to the news vendor]] ]
+[[Talk to the kid]]
+[[Talk to the drug dealer]]
+</tw-passagedata><tw-passagedata pid="7" name="Talk to the news vendor" tags="" position="609,449">Extra extra read all about it
+
+[[Drink some soda]]</tw-passagedata><tw-passagedata pid="8" name="Talk to the kid" tags="" position="759,449">Hey wanna buy some robot drugs?
+
+[[Fuck yeah I want some robot drugs-&gt;Buy Robot Drugs]]</tw-passagedata><tw-passagedata pid="9" name="Talk to the drug dealer" tags="" position="909,449">Wanna buy some people drugs?
+
+[[Yes kind denizen I would like to buy some people drugs-&gt;Buy People Drugs]]</tw-passagedata><tw-passagedata pid="10" name="Drink some soda" tags="" position="436,447">You have a bad reaction to the soda.
+
+Better stick to drugs.
+
+[[Get some drugs]]</tw-passagedata><tw-passagedata pid="11" name="Buy Robot Drugs" tags="" position="759,599">OK, great, now you&#x27;ve got robot drugs.
+
+(set:$robotDrugs to 1)
+
+[[OK then-&gt;Problems Continue]]</tw-passagedata><tw-passagedata pid="12" name="Buy People Drugs" tags="" position="909,599">You got yourself some people drugs and now you straight-up trippin bro
+
+(set:$peopleDrugs to 1)
+
+[[Really, like, look at your hand, man-&gt;Problems Continue]]</tw-passagedata><tw-passagedata pid="13" name="Problems Continue" tags="" position="759,749">Your rash still is a thing.
+
+(if:$peopleDrugs is 1)[You don&#x27;t think those drugs are doing good things for you]
+(if:$robotDrugs is 1)[Those robot drugs worked but now you have some different robot problem.]
+
+Better get to a hospital like for reals this time.
+
+[[Get to the Hospital]]</tw-passagedata><tw-passagedata pid="14" name="Get to the Hospital" tags="" position="759,899">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
